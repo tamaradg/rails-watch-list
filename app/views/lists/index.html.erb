@@ -15,6 +15,9 @@
         <%= link_to list_path(list), class:'text-decoration-none' do %>
           <div class="card-category"%>
             <%= list.name %>
+            <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, width: 200, height: 200%>
+            <% end %>
           </div>
         <% end %>
       </div>
